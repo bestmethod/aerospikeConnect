@@ -1,0 +1,51 @@
+aerospike:
+  host: "127.0.0.1"
+  post: 3000
+  connectionQueueSize: 300
+  limitConnectionsToQueueSize: true
+  clusterName: ""
+  maxConnectAttempts: 5
+  maxConnectRetryTimeMs: 5000
+  connectRetrySleepMs: 500
+  policies:
+    base:
+      timeoutMs:
+        connect: 1000
+        idle: 55000
+        login: 1000
+    read:
+      timeoutMs:
+        socket: 1000
+        total: 5000
+        sleepBetweenRetries: 500
+      maxRetries: 5
+    write:
+      timeoutMs:
+        socket: 1000
+        total: 5000
+        sleepBetweenRetries: 500
+      maxRetries: 5
+    scan:
+      timeoutMs:
+        socket: 1000
+        total: 5000
+        sleepBetweenRetries: 500
+      maxRetries: 5
+    query:
+      timeoutMs:
+        socket: 1000
+        total: 5000
+        sleepBetweenRetries: 500
+      maxRetries: 5
+    info:
+      timeoutMs: 1000
+  security:
+    username: ""
+    password: ""
+    authModeExternal: false
+  tls:
+    caFile: ""
+    certFile: ""
+    keyFile: ""
+    serverName: ""
+    insecureSkipVerify: true
